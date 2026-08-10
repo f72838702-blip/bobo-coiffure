@@ -88,26 +88,26 @@ export interface UIStrings {
 /* -------------------------------------------------------------------------- */
 
 const PHONE = "+1 240 795 2141";
-const EMAIL = "mariambobodiall61@gmail.com";
+const EMAIL = "mariambobodiallo61@gmail.com";
 const NAME = "Mariama Bobo Diallo";
 const MONOGRAM = "MB";
 
 const SOCIALS_FR: SocialLink[] = [
   { label: "WhatsApp (Mariama Bobo Diallo)", url: "https://wa.me/12407952141", type: "whatsapp" },
   { label: "TikTok", url: "https://vm.tiktok.com/ZS9how6aQDTbu-bvcpg/", type: "tiktok" },
-  { label: "E-mail", url: "mariambobodiall61@gmail.com", type: "email" },
+  { label: "E-mail", url: "mariambobodiallo61@gmail.com", type: "email" },
   { label: "Site web", url: "https://dalmitty-coiffure.vercel.app", type: "website" },
 ];
 const SOCIALS_EN: SocialLink[] = [
   { label: "WhatsApp (Mariama Bobo Diallo)", url: "https://wa.me/12407952141", type: "whatsapp" },
   { label: "TikTok", url: "https://vm.tiktok.com/ZS9how6aQDTbu-bvcpg/", type: "tiktok" },
-  { label: "Email", url: "mariambobodiall61@gmail.com", type: "email" },
+  { label: "Email", url: "mariambobodiallo61@gmail.com", type: "email" },
   { label: "Website", url: "https://dalmitty-coiffure.vercel.app", type: "website" },
 ];
 const SOCIALS_PT: SocialLink[] = [
   { label: "WhatsApp (Mariama Bobo Diallo)", url: "https://wa.me/12407952141", type: "whatsapp" },
   { label: "TikTok", url: "https://vm.tiktok.com/ZS9how6aQDTbu-bvcpg/", type: "tiktok" },
-  { label: "E-mail", url: "mariambobodiall61@gmail.com", type: "email" },
+  { label: "E-mail", url: "mariambobodiallo61@gmail.com", type: "email" },
   { label: "Site web", url: "https://dalmitty-coiffure.vercel.app", type: "website" },
 ];
 

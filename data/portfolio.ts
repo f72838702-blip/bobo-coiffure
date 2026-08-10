@@ -38,7 +38,7 @@ const profile: Profile = {
     "Coiffure de luxe qui vient à vous — coupe, couleur, balayage et coiffure événementielle, à domicile partout dans le Maryland.",
   bio: "Mariama Bobo Diallo — dite « BOBO » — est coiffeuse professionnelle. Depuis son studio mobile, elle se déplace à domicile dans tout le Maryland et offre une expérience salon haut de gamme dans le confort de votre maison. Spécialiste reconnue des cheveux texturés et de la coiffure événementielle — mariages, shootings, cérémonies — elle conjugue technique, douceur et sens du détail pour révéler la beauté de chaque chevelure.",
   location: "Maryland, États-Unis — Coiffure à domicile dans tout l'État",
-  email: "mariambobodiall61@gmail.com",
+  email: "mariambobodiallo61@gmail.com",
   phone: "+1 240 795 2141",
   available: true,
 };
@@ -302,7 +302,7 @@ const socials: SocialLink[] = [
   },
   {
     label: "E-mail",
-    url: "mariambobodiall61@gmail.com",
+    url: "mariambobodiallo61@gmail.com",
     type: "email",
   },
   { label: "Site web", url: "https://dalmitty-coiffure.vercel.app", type: "website" },
