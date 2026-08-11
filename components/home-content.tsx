@@ -37,10 +37,12 @@ import {
 } from "lucide-react";
 
 import { useLocale } from "@/lib/i18n";
+import { galleryImages } from "@/data/portfolio";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Contact } from "@/components/contact";
 import { StatCounter } from "@/components/stat-counter";
+import { BeforeAfterSlider } from "@/components/before-after-slider";
 
 /* -------------------------------------------------------------------------- */
 /*  Tables d'icônes (nom stocké en données -> composant Lucide)                */
@@ -302,18 +304,35 @@ export function HomeContent() {
             subtitle={ui.gallery.subtitle}
           />
           <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-            {products.map((product) => (
-              <figure key={`g-${product.id}`} className="gallery-tile aspect-[4/5]">
-                <figcaption className="absolute inset-x-0 bottom-0 z-10 p-4">
-                  <span className="block text-[0.65rem] uppercase tracking-[0.22em] text-[#f2ede4]">
-                    {ui.gallery.beforeAfterLabel}
-                  </span>
-                  <span className="block font-display text-lg font-semibold text-[#fffdf9]">
-                    {product.title}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+            {products.map((product) => {
+              const imgs = galleryImages[product.id];
+              if (imgs) {
+                return (
+                  <BeforeAfterSlider
+                    key={`g-${product.id}`}
+                    before={imgs.before}
+                    after={imgs.after}
+                    beforeLabel={ui.gallery.beforeLabel}
+                    afterLabel={ui.gallery.afterLabel}
+                    title={product.title}
+                    captionLabel={ui.gallery.beforeAfterLabel}
+                  />
+                );
+              }
+              // Pas encore de photos pour cette prestation : placeholder dégradé.
+              return (
+                <figure key={`g-${product.id}`} className="gallery-tile aspect-[4/5]">
+                  <figcaption className="absolute inset-x-0 bottom-0 z-10 p-4">
+                    <span className="block text-[0.65rem] uppercase tracking-[0.22em] text-[#f2ede4]">
+                      {ui.gallery.beforeAfterLabel}
+                    </span>
+                    <span className="block font-display text-lg font-semibold text-[#fffdf9]">
+                      {product.title}
+                    </span>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </section>
 

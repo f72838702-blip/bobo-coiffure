@@ -310,6 +310,24 @@ const socials: SocialLink[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
+/*  Galerie Avant / Après — photos par prestation                              */
+/* -------------------------------------------------------------------------- */
+/*  Déposez les photos dans `public/gallery/` avec ces noms exacts :
+ *      <id>-avant.jpg   (avant la prestation)
+ *      <id>-apres.jpg   (après la prestation)
+ *  Format conseillé : portrait 4:5 (ex. 1000×1250 px), JPG ou WebP.
+ *  Tant qu'une paire est absente du dossier, la tuile affiche
+ *  automatiquement le placeholder dégradé (fallback sur erreur d'image).       */
+export const galleryImages: Record<string, { before: string; after: string }> = {
+  coupe:      { before: "/gallery/coupe-avant.jpg",      after: "/gallery/coupe-apres.jpg" },
+  couleur:    { before: "/gallery/couleur-avant.jpg",    after: "/gallery/couleur-apres.jpg" },
+  soins:      { before: "/gallery/soins-avant.jpg",      after: "/gallery/soins-apres.jpg" },
+  tresses:    { before: "/gallery/tresses-avant.jpg",    after: "/gallery/tresses-apres.jpg" },
+  mariage:    { before: "/gallery/mariage-avant.jpg",    after: "/gallery/mariage-apres.jpg" },
+  extensions: { before: "/gallery/extensions-avant.jpg", after: "/gallery/extensions-apres.jpg" },
+};
+
+/* -------------------------------------------------------------------------- */
 /*  Export agrégé                                                                */
 /* -------------------------------------------------------------------------- */
 

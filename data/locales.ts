@@ -54,6 +54,8 @@ export interface UIStrings {
     title: string;
     subtitle: string;
     beforeAfterLabel: string;
+    beforeLabel: string;
+    afterLabel: string;
   };
   why: { eyebrow: string; title: string };
   process: { eyebrow: string; title: string; subtitle: string };
@@ -192,7 +194,7 @@ const UI_FR: UIStrings = {
   },
   about: { eyebrow: "À propos", title: "L'élégance capillaire qui vient à vous", ceoLine: "Mariama Bobo Diallo — Coiffeuse professionnelle" },
   products: { eyebrow: "Prestations", title: "Mes services", subtitle: "Une expérience salon complète, chez vous — de la coupe à la coiffure de mariage." },
-  gallery: { eyebrow: "Galerie", title: "Avant / Après", subtitle: "Un aperçu de mes réalisations, par prestation.", beforeAfterLabel: "Avant — Après" },
+  gallery: { eyebrow: "Galerie", title: "Avant / Après", subtitle: "Un aperçu de mes réalisations, par prestation.", beforeAfterLabel: "Avant — Après", beforeLabel: "Avant", afterLabel: "Après" },
   why: { eyebrow: "Pourquoi me choisir", title: "Ce qui me différencie" },
   process: { eyebrow: "Comment ça marche", title: "Votre rendez-vous en 4 étapes", subtitle: "Simple, flexible et sans fausse note." },
   testimonials: { eyebrow: "Témoignages", title: "Elles me font confiance", ratingAria: "Note 5 sur 5" },
@@ -295,7 +297,7 @@ const UI_EN: UIStrings = {
   },
   about: { eyebrow: "About", title: "Hair elegance that comes to you", ceoLine: "Mariama Bobo Diallo — Professional hairdresser" },
   products: { eyebrow: "Services", title: "What I offer", subtitle: "A complete salon experience, at home — from a cut to wedding styling." },
-  gallery: { eyebrow: "Gallery", title: "Before / After", subtitle: "A glimpse of my work, by service.", beforeAfterLabel: "Before — After" },
+  gallery: { eyebrow: "Gallery", title: "Before / After", subtitle: "A glimpse of my work, by service.", beforeAfterLabel: "Before — After", beforeLabel: "Before", afterLabel: "After" },
   why: { eyebrow: "Why choose me", title: "What sets me apart" },
   process: { eyebrow: "How it works", title: "Your appointment in 4 steps", subtitle: "Simple, flexible and seamless." },
   testimonials: { eyebrow: "Reviews", title: "They trust me", ratingAria: "Rated 5 out of 5" },
@@ -398,7 +400,7 @@ const UI_PT: UIStrings = {
   },
   about: { eyebrow: "Sobre", title: "Elegância capilar que vem até si", ceoLine: "Mariama Bobo Diallo — Cabeleireira profissional" },
   products: { eyebrow: "Serviços", title: "O que ofereço", subtitle: "Uma experiência de salão completa, em casa — do corte ao penteado de casamento." },
-  gallery: { eyebrow: "Galeria", title: "Antes / Depois", subtitle: "Um vislumbre do meu trabalho, por serviço.", beforeAfterLabel: "Antes — Depois" },
+  gallery: { eyebrow: "Galeria", title: "Antes / Depois", subtitle: "Um vislumbre do meu trabalho, por serviço.", beforeAfterLabel: "Antes — Depois", beforeLabel: "Antes", afterLabel: "Depois" },
   why: { eyebrow: "Porquê escolher-me", title: "O que me distingue" },
   process: { eyebrow: "Como funciona", title: "A sua marcação em 4 etapas", subtitle: "Simples, flexível e sem falhas." },
   testimonials: { eyebrow: "Testemunhos", title: "Confiam em mim", ratingAria: "Avaliação 5 de 5" },
