@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: `%s — ${profile.name}`,
   },
   description: profile.bio,
-  metadataBase: new URL("https://dalmitty-coiffure.vercel.app"),
+  metadataBase: new URL("https://bobo-coiffure.vercel.app"),
   openGraph: {
     title: `${profile.name} — ${profile.role}`,
     description: profile.bio,

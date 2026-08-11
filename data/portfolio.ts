@@ -2,12 +2,13 @@
  * Source de données unique du site vitrine de Mariama Bobo Diallo —
  * coiffeuse professionnelle à domicile (Maryland, États-Unis).
  *
- * IMPORTANT : ce site est indépendant du projet « Dalmitty néobanque », du
- * portefeuille électronique « Dalmitty Market Solution » (dalmitty-2) et du
- * portefeuille mode « Dalmitty Commercial EI » (dalmitty-mode). Ici, c'est la
- * marque personnelle de Mariama Bobo Diallo (dite « BOBO ») : coiffure de
- * luxe à domicile — coupe, couleur, balayage, soins, tresses protectrices,
- * mariage & événementiel — déplacement dans tout le Maryland.
+ * IMPORTANT : ce site (BOBO Coiffure) est indépendant du projet « Dalmitty
+ * néobanque », du portefeuille électronique « Dalmitty Market Solution »
+ * (dalmitty-2) et du portefeuille mode « Dalmitty Commercial EI »
+ * (dalmitty-mode). Ici, c'est la marque personnelle de Mariama Bobo Diallo
+ * (dite « BOBO ») : coiffure de luxe à domicile — coupe, couleur, balayage,
+ * soins, tresses protectrices, mariage & événementiel — déplacement dans
+ * tout le Maryland.
  *
  * Toute modification de contenu se fait ici, sans toucher aux composants.
  */
@@ -305,7 +306,7 @@ const socials: SocialLink[] = [
     url: "mariambobodiallo61@gmail.com",
     type: "email",
   },
-  { label: "Site web", url: "https://dalmitty-coiffure.vercel.app", type: "website" },
+  { label: "Site web", url: "https://bobo-coiffure.vercel.app", type: "website" },
 ];
 
 /* -------------------------------------------------------------------------- */

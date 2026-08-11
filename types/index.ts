@@ -1,5 +1,6 @@
 /**
- * Types centraux du site vitrine de Dalmitty — commerçant professionnel.
+ * Types centraux du site vitrine BOBO Coiffure — coiffeuse professionnelle
+ * à domicile (Mariama Bobo Diallo), Maryland, États-Unis.
  *
  * Le contenu (identité, produits, atouts, témoignages, etc.) vit dans
  * `data/portfolio.ts` et est consommé par les composants et la route API.
