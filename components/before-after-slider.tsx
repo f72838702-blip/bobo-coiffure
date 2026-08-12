@@ -34,11 +34,33 @@ export function BeforeAfterSlider({
   captionLabel,
 }: BeforeAfterSliderProps) {
   const [pos, setPos] = React.useState(50);
+  const [visible, setVisible] = React.useState(false);
   const [ready, setReady] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
+  const tileRef = React.useRef<HTMLElement>(null);
   const rangeId = React.useId();
 
+  // N'active le curseur que lorsque la tuile approche du viewport
+  // (lazy-load : évite de charger les 12 photos dès l'arrivée sur la page).
   React.useEffect(() => {
+    const el = tileRef.current;
+    if (!el || visible) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [visible]);
+
+  // Précharge les deux photos uniquement une fois la tuile visible.
+  React.useEffect(() => {
+    if (!visible) return;
     let cancelled = false;
     let beforeLoaded = false;
     let afterLoaded = false;
@@ -70,12 +92,14 @@ export function BeforeAfterSlider({
     return () => {
       cancelled = true;
     };
-  }, [before, after]);
+  }, [visible, before, after]);
 
-  // Placeholder tant que les photos ne sont pas chargées (ou si elles manquent).
-  if (!ready || failed) {
+  const showSlider = visible && ready && !failed;
+
+  // Placeholder tant que la tuile n'est pas visible / pas chargée / en erreur.
+  if (!showSlider) {
     return (
-      <figure className="gallery-tile aspect-[4/5]">
+      <figure ref={tileRef} className="gallery-tile aspect-[4/5]">
         <figcaption className="absolute inset-x-0 bottom-0 z-10 p-4">
           <span className="block text-[0.65rem] uppercase tracking-[0.22em] text-[#f2ede4]">
             {captionLabel}
@@ -90,6 +114,7 @@ export function BeforeAfterSlider({
 
   return (
     <figure
+      ref={tileRef}
       className="gallery-tile group aspect-[4/5] select-none"
       aria-label={`${title} — ${captionLabel}`}
     >
@@ -99,6 +124,7 @@ export function BeforeAfterSlider({
         alt={`${title} — ${afterLabel}`}
         className="absolute inset-0 h-full w-full object-cover"
         draggable={false}
+        loading="lazy"
       />
 
       {/* Photo AVANT (découpée selon la position du curseur) */}
@@ -112,6 +138,7 @@ export function BeforeAfterSlider({
           alt={`${title} — ${beforeLabel}`}
           className="absolute inset-0 h-full w-full object-cover"
           draggable={false}
+          loading="lazy"
         />
       </div>
 
