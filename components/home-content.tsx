@@ -43,6 +43,7 @@ import { Footer } from "@/components/footer";
 import { Contact } from "@/components/contact";
 import { StatCounter } from "@/components/stat-counter";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
+import { HeroPortrait } from "@/components/hero-portrait";
 
 /* -------------------------------------------------------------------------- */
 /*  Tables d'icônes (nom stocké en données -> composant Lucide)                */
@@ -177,18 +178,14 @@ export function HomeContent() {
                 </ul>
               </div>
 
-              {/* Colonne portrait / monogramme (placeholder élégant) */}
+              {/* Colonne portrait — photo de Mariama (fallback monogramme MB) */}
               <div className="reveal-up">
-                <div className="gallery-tile mx-auto aspect-[4/5] max-w-sm">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
-                    <span className="font-display text-7xl font-semibold text-[#3a2f22] sm:text-8xl">
-                      {profile.monogram}
-                    </span>
-                    <span className="text-sm uppercase tracking-[0.22em] text-[#6b5d47]">
-                      {profile.role}
-                    </span>
-                  </div>
-                </div>
+                <HeroPortrait
+                  src="/mariama.jpg"
+                  name={profile.name}
+                  role={profile.role}
+                  monogram={profile.monogram}
+                />
                 <p className="mt-4 text-center text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
                   {profile.location}
                 </p>
