@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Sélecteur de langue (FR / EN / PT) affiché dans l'en-tête.
+ * Sélecteur de langue (EN / FR / ES) affiché dans l'en-tête.
  *
  * Petit dropdown compact, aligné visuellement sur le `ThemeToggle` (h-9).
  * La langue courante est pilotée par le contexte `useLocale()`.

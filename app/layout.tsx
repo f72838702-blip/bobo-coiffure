@@ -6,6 +6,13 @@ import { LocaleProvider } from "@/lib/i18n";
 import { WhatsappFab } from "@/components/whatsapp-fab";
 import "./globals.css";
 
+// Métadonnées SEO canoniques en anglais (langue par défaut — site destiné
+// au marché du Maryland, États-Unis). Le contenu affiché suit la langue
+// choisie par le visiteur via le sélecteur (contexte client).
+const SEO_ROLE = "Mobile professional hairdresser";
+const SEO_BIO =
+  "Mariama Bobo Diallo — known as “BOBO” — is a professional hairdresser. From her mobile studio, she travels to homes across Maryland, offering a high-end salon experience in the comfort of your own home. A recognized specialist in textured hair and event styling — weddings, photo shoots, ceremonies.";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -28,14 +35,14 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${profile.name} — ${profile.role}`,
+    default: `${profile.name} — ${SEO_ROLE}`,
     template: `%s — ${profile.name}`,
   },
-  description: profile.bio,
+  description: SEO_BIO,
   metadataBase: new URL("https://bobo-coiffure.vercel.app"),
   openGraph: {
-    title: `${profile.name} — ${profile.role}`,
-    description: profile.bio,
+    title: `${profile.name} — ${SEO_ROLE}`,
+    description: SEO_BIO,
     type: "website",
   },
 };
@@ -45,7 +52,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="fr"
+      lang="en"
       className={`${inter.variable} ${fraunces.variable}`}
       suppressHydrationWarning
     >

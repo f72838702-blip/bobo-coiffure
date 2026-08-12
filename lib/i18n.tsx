@@ -1,8 +1,9 @@
 "use client";
 
 /**
- * Internationalisation côté client (FR / EN / PT).
+ * Internationalisation côté client (EN / FR / ES).
  *
+ * L'anglais est la langue par défaut (site destiné au Maryland, États-Unis).
  * Le choix de langue est persisté dans `localStorage` et reflété sur
  * `<html lang>`. Aucun routage par langue : le site est une page unique et
  * le contenu provient de `data/locales.ts` (une structure `SiteData` par
@@ -31,25 +32,26 @@ interface LocaleContextValue {
 
 const LocaleContext = React.createContext<LocaleContextValue | null>(null);
 
-/** Détecte la langue préférée : localStorage > navigateur > français. */
+/** Détecte la langue préférée : localStorage > navigateur > anglais (défaut US). */
 function detectLocale(): Locale {
-  if (typeof window === "undefined") return "fr";
+  if (typeof window === "undefined") return "en";
   try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "fr" || stored === "en" || stored === "pt") return stored;
+    if (stored === "en" || stored === "fr" || stored === "es") return stored;
     const nav = window.navigator.language.slice(0, 2).toLowerCase();
-    if (nav === "en") return "en";
-    if (nav === "pt") return "pt";
+    if (nav === "fr") return "fr";
+    if (nav === "es") return "es";
+    // Tout le reste (y compris navigateurs en) → anglais, langue par défaut.
   } catch {
     /* localStorage indisposable — on garde le défaut. */
   }
-  return "fr";
+  return "en";
 }
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  // Rendu serveur et premier rendu client : français (évite tout décalage
+  // Rendu serveur et premier rendu client : anglais (évite tout décalage
   // d'hydratation). La langue réelle est appliquée après le montage.
-  const [locale, setLocaleState] = React.useState<Locale>("fr");
+  const [locale, setLocaleState] = React.useState<Locale>("en");
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {

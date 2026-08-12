@@ -1,5 +1,8 @@
 /**
- * Contenu traduit du site vitrine de Mariama Bobo Diallo (FR / EN / PT).
+ * Contenu traduit du site vitrine de Mariama Bobo Diallo (EN / FR / ES).
+ *
+ * L'anglais est la langue par défaut (site destiné au marché du Maryland,
+ * États-Unis). Le français et l'espagnol sont disponibles via le sélecteur.
  *
  * Toute la donnée « métier » (identité, prestations, atouts, témoignages,
  * FAQ…) et toutes les chaînes UI vivent ici, par langue. Les composants
@@ -21,7 +24,7 @@ import type { SiteData, SocialLink } from "@/types";
 /*  Langues disponibles                                                        */
 /* -------------------------------------------------------------------------- */
 
-export type Locale = "fr" | "en" | "pt";
+export type Locale = "en" | "fr" | "es";
 
 export interface LocaleMeta {
   code: Locale;
@@ -29,10 +32,11 @@ export interface LocaleMeta {
   flag: string;
 }
 
+// Ordre = priorité : l'anglais (États-Unis) est la langue par défaut.
 export const LOCALES: LocaleMeta[] = [
+  { code: "en", label: "English", flag: "🇺🇸" },
   { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -106,11 +110,11 @@ const SOCIALS_EN: SocialLink[] = [
   { label: "Email", url: "mariambobodiallo61@gmail.com", type: "email" },
   { label: "Website", url: "https://bobo-coiffure.vercel.app", type: "website" },
 ];
-const SOCIALS_PT: SocialLink[] = [
+const SOCIALS_ES: SocialLink[] = [
   { label: "WhatsApp (Mariama Bobo Diallo)", url: "https://wa.me/12407952141", type: "whatsapp" },
   { label: "TikTok", url: "https://vm.tiktok.com/ZS9how6aQDTbu-bvcpg/", type: "tiktok" },
-  { label: "E-mail", url: "mariambobodiallo61@gmail.com", type: "email" },
-  { label: "Site web", url: "https://bobo-coiffure.vercel.app", type: "website" },
+  { label: "Correo", url: "mariambobodiallo61@gmail.com", type: "email" },
+  { label: "Sitio web", url: "https://bobo-coiffure.vercel.app", type: "website" },
 ];
 
 /* ---------------------------- FRANÇAIS ------------------------------------- */
@@ -320,120 +324,120 @@ const UI_EN: UIStrings = {
   language: { aria: "Change language", label: "Language" },
 };
 
-/* ---------------------------- PORTUGAIS ----------------------------------- */
+/* ---------------------------- ESPAÑOL ------------------------------------ */
 
-const SITE_PT: SiteData = {
+const SITE_ES: SiteData = {
   heroGradient,
   profile: {
     name: NAME,
     monogram: MONOGRAM,
-    role: "Cabeleireira profissional a domicílio",
-    tagline: "Penteados de luxo que vêm até si — corte, cor, balayage e penteado de evento, em casa, por todo o Maryland.",
-    bio: "Mariama Bobo Diallo — conhecida por «BOBO» — é cabeleireira profissional. A partir do seu estúdio móvel, desloca-se a domicílio por todo o Maryland e oferece uma experiência de salão de alto nível no conforto da sua casa. Especialista reconhecida em cabelos texturizados e penteados de evento — casamentos, sessões fotográficas, cerimónias — combina técnica, delicadeza e sentido de detalhe para revelar a beleza de cada cabeleira.",
-    location: "Maryland, Estados Unidos — Cabeleireira a domicílio por todo o estado",
+    role: "Peluquera profesional a domicilio",
+    tagline: "Peluquería de lujo que va a usted — corte, color, balayage y peinado de evento, en casa, por todo Maryland.",
+    bio: "Mariama Bobo Diallo — conocida como «BOBO»— es peluquera profesional. Desde su estudio móvil, se desplaza a domicilio por todo Maryland y ofrece una experiencia de salón de alta gama en la comodidad de su casa. Especialista reconocida en cabellos texturizados y peinados de evento — bodas, sesiones fotográficas, ceremonias — combina técnica, delicadeza y sentido del detalle para revelar la belleza de cada cabellera.",
+    location: "Maryland, Estados Unidos — Peluquería a domicilio por todo el estado",
     email: EMAIL,
     phone: PHONE,
     available: true,
   },
   nav: [
-    { label: "Sobre", href: "#apropos" },
-    { label: "Serviços", href: "#produits" },
-    { label: "Galeria", href: "#galerie" },
-    { label: "Vantagens", href: "#atouts" },
-    { label: "Testemunhos", href: "#temoignages" },
+    { label: "Acerca de", href: "#apropos" },
+    { label: "Servicios", href: "#produits" },
+    { label: "Galería", href: "#galerie" },
+    { label: "Ventajas", href: "#atouts" },
+    { label: "Testimonios", href: "#temoignages" },
     { label: "FAQ", href: "#faq" },
     { label: "Contacto", href: "#contact" },
   ],
   stats: [
-    { id: "experience", value: "10+", label: "Anos de experiência" },
-    { id: "clients", value: "500+", label: "Clientes satisfeitas" },
-    { id: "domicile", value: "100%", label: "A domicílio" },
-    { id: "villes", value: "15+", label: "Cidades servidas" },
+    { id: "experience", value: "10+", label: "Años de experiencia" },
+    { id: "clients", value: "500+", label: "Clientas satisfechas" },
+    { id: "domicile", value: "100%", label: "A domicilio" },
+    { id: "villes", value: "15+", label: "Ciudades atendidas" },
   ],
   products: [
-    { id: "coupe", icon: "Scissors", title: "Corte & brush", description: "Corte feminino, masculino e infantil, modelação e brush adaptados à natureza e textura do seu cabelo.", tags: ["Corte", "Brush", "Todos os tipos"] },
-    { id: "couleur", icon: "Palette", title: "Cor & balayage", description: "Coloração, balayage, madeixas e tonalizante para um resultado luminoso, reflexos subtis e cabelo respeitado.", tags: ["Balayage", "Coloração", "Madeixas"] },
-    { id: "soins", icon: "Sparkles", title: "Tratamentos & proteínas", description: "Tratamento profundo, botox capilar, queratina e proteínas para nutrir, alisar e reparar a fibra.", tags: ["Tratamento", "Queratina", "Reparação"] },
-    { id: "tresses", icon: "Layers", title: "Tranças & penteado protetor", description: "Rabinhos, box braids, twists e penteados protetores feitos com cuidado, delicadeza e precisão.", tags: ["Rabinhos", "Box braids", "Protetor"] },
-    { id: "mariage", icon: "Crown", title: "Casamento & penteado de evento", description: "Coches, updos e penteados de cerimónia para noivas e convidadas — duram todo o dia, sem retoques.", tags: ["Casamento", "Coche", "Cerimónia"] },
-    { id: "extensions", icon: "Wind", title: "Extensões & volume", description: "Aplicação de extensões, acrescentos e volume para uma cabeleira cheia, longa e natural.", tags: ["Extensões", "Acrescentos", "Volume"] },
+    { id: "coupe", icon: "Scissors", title: "Corte & brushing", description: "Corte de mujer, hombre y niño, modelado y brushing adaptados a la naturaleza y textura de su cabello.", tags: ["Corte", "Brushing", "Todos los tipos"] },
+    { id: "couleur", icon: "Palette", title: "Color & balayage", description: "Coloración, balayage, mechas y tónico para un resultado luminoso, reflejos sutiles y un cabello respetado.", tags: ["Balayage", "Coloración", "Mechas"] },
+    { id: "soins", icon: "Sparkles", title: "Tratamientos & proteínas", description: "Tratamiento profundo, botox capilar, queratina y proteínas para nutrir, alisar y reparar la fibra.", tags: ["Tratamiento", "Queratina", "Reparación"] },
+    { id: "tresses", icon: "Layers", title: "Trenzas & peinado protector", description: "Vanillas, box braids, twists y peinados protectores realizados con cuidado, delicadeza y precisión.", tags: ["Vanillas", "Box braids", "Protector"] },
+    { id: "mariage", icon: "Crown", title: "Boda & peinado de evento", description: "Moños, updos y peinados de ceremonia para novias e invitadas — duran todo el día, sin retoques.", tags: ["Boda", "Moño", "Ceremonia"] },
+    { id: "extensions", icon: "Wind", title: "Extensiones & volumen", description: "Aplicación de extensiones, postizos y volumen para una cabellera llena, larga y natural.", tags: ["Extensiones", "Postizos", "Volumen"] },
   ],
   why: [
-    { id: "confort", icon: "Home", title: "O salão vai até si", description: "Sem deslocações nem espera: instalo-me em sua casa, com o meu material profissional, para um serviço 100% personalizado." },
-    { id: "expert", icon: "Award", title: "Especialista em cabelos texturizados", description: "Mais de 10 anos de experiência com cabelos afro, mistos e texturizados: conheço cada tipo de cabelo e as suas necessidades." },
-    { id: "produits", icon: "Leaf", title: "Produtos premium e suaves", description: "Marcas selecionadas, sem sulfatos agressivos, que respeitam o couro cabeludo e preservam a fibra." },
-    { id: "flexibilite", icon: "CalendarClock", title: "Por marcação, 7 dias/semana", description: "Horários flexíveis, incluindo noites e fins de semana: adapto-me à sua agenda, não o contrário." },
+    { id: "confort", icon: "Home", title: "El salón va a usted", description: "Sin desplazamientos ni esperas: me instalo en su casa, con mi material profesional, para un servicio 100% personalizado." },
+    { id: "expert", icon: "Award", title: "Especialista en cabellos texturizados", description: "Más de 10 años de experiencia con cabellos afro, mixtos y texturizados: conozco cada tipo de cabello y sus necesidades." },
+    { id: "produits", icon: "Leaf", title: "Productos premium y suaves", description: "Marcas seleccionadas, sin sulfatos agresivos, que respetan el cuero cabelludo y preservan la fibra." },
+    { id: "flexibilite", icon: "CalendarClock", title: "Con cita, 7 días/semana", description: "Horarios flexibles, incluidas noches y fines de semana: me adapto a su agenda, no al revés." },
   ],
   steps: [
-    { id: "contact", step: "01", title: "Primeiro contacto", description: "Escreve-me no WhatsApp ou pelo formulário: respondo rápido e identifico a sua necessidade." },
-    { id: "consultation", step: "02", title: "Consulta & orçamento", description: "Falamos sobre o serviço pretendido, o tipo de cabelo e o preço. Sem surpresas." },
-    { id: "rdv", step: "03", title: "Marcação a domicílio", description: "Desloco-me à hora combinada, com o meu material, e realizo o serviço em sua casa." },
-    { id: "suivi", step: "04", title: "Pós-tratamento & seguimento", description: "Conselhos de manutenção personalizados e seguimento: a sua satisfação continua a ser a minha prioridade após a marcação." },
+    { id: "contact", step: "01", title: "Primer contacto", description: "Me escribe por WhatsApp o mediante el formulario: respondo rápido e identifico su necesidad." },
+    { id: "consultation", step: "02", title: "Consulta y presupuesto", description: "Hablamos del servicio deseado, su tipo de cabello y el precio. Sin sorpresas." },
+    { id: "rdv", step: "03", title: "Cita a domicilio", description: "Me desplazo a la hora acordada, con mi material, y realizo el servicio en su casa." },
+    { id: "suivi", step: "04", title: "Post-tratamiento y seguimiento", description: "Consejos de mantenimiento personalizados y seguimiento: su satisfacción sigue siendo mi prioridad después de la cita." },
   ],
   testimonials: [
-    { id: "t1", quote: "A BOBO veio a minha casa para um balayage e um brush. Resultado lindo, e tudo isto sem sair de casa. Recomendo a 100%.", author: "Aïcha T.", role: "Cliente — Silver Spring, Maryland", initials: "AT" },
-    { id: "t2", quote: "Penteado de noiva a domicílio no grande dia: coche perfeito, aguentou o dia todo. A Mariama deu-me confiança.", author: "Ndèye F.", role: "Noiva — Baltimore, Maryland", initials: "NF" },
-    { id: "t3", quote: "As minhas tranças protetoras feitas com delicadeza e precisão. Trabalho cuidado e cabelo respeitado. Uma verdadeira profissional.", author: "Kadiatou S.", role: "Cliente — Rockville, Maryland", initials: "KS" },
+    { id: "t1", quote: "BOBO vino a mi casa para un balayage y un brushing. Resultado precioso, y todo sin salir de casa. La recomiendo al 100%.", author: "Aïcha T.", role: "Clienta — Silver Spring, Maryland", initials: "AT" },
+    { id: "t2", quote: "Peinado de novia a domicilio el gran día: un moño perfecto, aguantó todo el día. Mariama me dio confianza.", author: "Ndèye F.", role: "Novia — Baltimore, Maryland", initials: "NF" },
+    { id: "t3", quote: "Mis trenzas protectoras hechas con delicadeza y precisión. Trabajo esmerado y cabello respetado. Una verdadera profesional.", author: "Kadiatou S.", role: "Clienta — Rockville, Maryland", initials: "KS" },
   ],
   faq: [
-    { id: "q1", question: "Que cidades do Maryland serve?", answer: "Desloco-me por todo o Maryland: Baltimore, Silver Spring, Rockville, Columbia, Gaithersburg, Frederick e arredores. Para um pedido fora de zona, contacte-me: encontraremos uma solução." },
-    { id: "q2", question: "Como marcar um atendimento?", answer: "O mais simples é o WhatsApp (+1 240 795 2141) ou o formulário de contacto. Confirmamos o serviço, a data e o preço antes da marcação." },
-    { id: "q3", question: "Quais são os seus preços?", answer: "Os preços dependem do serviço e do comprimento e espessura do cabelo. Um orçamento claro é dado após consulta, antes de qualquer serviço." },
-    { id: "q4", question: "É preciso fornecer alguma coisa?", answer: "Não. Trago todo o meu material profissional e os meus produtos. Só tem de relaxar e desfrutar." },
-    { id: "q5", question: "Faz penteados de casamento?", answer: "Sim. Noivas, damas de honor e convidadas: é possível uma prova prévia, e o penteado aguenta o dia todo, a domicílio." },
-    { id: "q6", question: "Como anular ou reagendar?", answer: "Avise-me com pelo menos 24 h de antecedência no WhatsApp. Adapto-me à sua agenda com gosto." },
+    { id: "q1", question: "¿Qué ciudades de Maryland atiende?", answer: "Me desplazo por todo Maryland: Baltimore, Silver Spring, Rockville, Columbia, Gaithersburg, Frederick y alrededores. Para una solicitud fuera de zona, contácteme: encontraremos una solución." },
+    { id: "q2", question: "¿Cómo reservar una cita?", answer: "Lo más sencillo es WhatsApp (+1 240 795 2141) o el formulario de contacto. Confirmamos el servicio, la fecha y el precio antes de la cita." },
+    { id: "q3", question: "¿Cuáles son sus precios?", answer: "Los precios dependen del servicio y de la longitud y grosor de su cabello. Se le da un presupuesto claro tras la consulta, antes de cualquier servicio." },
+    { id: "q4", question: "¿Hay que proporcionar algo?", answer: "No. Traigo todo mi material profesional y mis productos. Solo tiene que relajarse y disfrutar." },
+    { id: "q5", question: "¿Hace peinados de boda?", answer: "Sí. Novias, damas de honor e invitadas: es posible una prueba previa, y el peinado aguanta todo el día, a domicilio." },
+    { id: "q6", question: "¿Cómo cancelar o reprogramar?", answer: "Avíseme con al menos 24 h de antelación por WhatsApp. Me adapto a su agenda con gusto." },
   ],
-  socials: SOCIALS_PT,
+  socials: SOCIALS_ES,
 };
 
-const UI_PT: UIStrings = {
+const UI_ES: UIStrings = {
   trust: [
-    { label: "Cabeleireira a domicílio" },
-    { label: "Especialista cabelos texturizados" },
-    { label: "7 dias/semana" },
+    { label: "Peluquería a domicilio" },
+    { label: "Especialista en cabellos texturizados" },
+    { label: "7 días/semana" },
   ],
   hero: {
-    available: "Disponível para novas marcações",
-    ctaPrimary: "Ver os meus serviços",
-    ctaSecondary: "Marcar atendimento",
-    scrollAria: "Descer até aos números-chave",
+    available: "Disponible para nuevas citas",
+    ctaPrimary: "Ver mis servicios",
+    ctaSecondary: "Reservar una cita",
+    scrollAria: "Bajar a las cifras clave",
   },
-  about: { eyebrow: "Sobre", title: "Elegância capilar que vem até si", ceoLine: "Mariama Bobo Diallo — Cabeleireira profissional" },
-  products: { eyebrow: "Serviços", title: "O que ofereço", subtitle: "Uma experiência de salão completa, em casa — do corte ao penteado de casamento." },
-  gallery: { eyebrow: "Galeria", title: "Antes / Depois", subtitle: "Um vislumbre do meu trabalho, por serviço.", beforeAfterLabel: "Antes — Depois", beforeLabel: "Antes", afterLabel: "Depois" },
-  why: { eyebrow: "Porquê escolher-me", title: "O que me distingue" },
-  process: { eyebrow: "Como funciona", title: "A sua marcação em 4 etapas", subtitle: "Simples, flexível e sem falhas." },
-  testimonials: { eyebrow: "Testemunhos", title: "Confiam em mim", ratingAria: "Avaliação 5 de 5" },
-  faq: { eyebrow: "FAQ", title: "Perguntas frequentes" },
-  cta: { title: "Pronta para um novo look?", text: "Escreva-me: respondo rápido e marcamos a sua sessão a domicílio.", button: "Marcar atendimento", whatsapp: "WhatsApp direto" },
-  contact: { title: "Marcar atendimento", subtitle: "Um serviço, um conselho ou uma dúvida? Escreva-me, respondo rápido.", whatsapp: "Contactar-me no WhatsApp" },
+  about: { eyebrow: "Acerca de", title: "La elegancia capilar que va a usted", ceoLine: "Mariama Bobo Diallo — Peluquera profesional" },
+  products: { eyebrow: "Servicios", title: "Lo que ofrezco", subtitle: "Una experiencia de salón completa, en casa — del corte al peinado de boda." },
+  gallery: { eyebrow: "Galería", title: "Antes / Después", subtitle: "Un vistazo a mi trabajo, por servicio.", beforeAfterLabel: "Antes — Después", beforeLabel: "Antes", afterLabel: "Después" },
+  why: { eyebrow: "Por qué elegirme", title: "Lo que me distingue" },
+  process: { eyebrow: "Cómo funciona", title: "Su cita en 4 pasos", subtitle: "Sencillo, flexible y sin fallos." },
+  testimonials: { eyebrow: "Testimonios", title: "Confían en mí", ratingAria: "Valoración 5 de 5" },
+  faq: { eyebrow: "FAQ", title: "Preguntas frecuentes" },
+  cta: { title: "¿Lista para un nuevo look?", text: "Escríbame: respondo rápido y fijamos su cita a domicilio.", button: "Reservar una cita", whatsapp: "WhatsApp directo" },
+  contact: { title: "Reservar una cita", subtitle: "¿Un servicio, un consejo o una pregunta? Escríbame, respondo rápido.", whatsapp: "Contactarme por WhatsApp" },
   form: {
-    name: "Nome", namePlaceholder: "O seu nome",
-    email: "E-mail", emailPlaceholder: "voce@exemplo.com",
-    subject: "Assunto (opcional)", subjectPlaceholder: "Assunto da sua mensagem",
-    message: "Mensagem", messagePlaceholder: "Descreva o serviço pretendido, o tipo de cabelo e a sua cidade...",
-    honeypotAria: "Campo anti-spam, deixe vazio",
-    submit: "Enviar o meu pedido", sending: "A enviar...",
-    errors: { name: "Introduza pelo menos 2 caracteres.", email: "Endereço de e-mail inválido.", message: "A sua mensagem deve conter pelo menos 10 caracteres." },
-    fallbackError: "Não foi possível enviar a mensagem. Verifique a ligação.", fallbackSuccess: "Mensagem enviada com sucesso.",
+    name: "Nombre", namePlaceholder: "Su nombre",
+    email: "Correo", emailPlaceholder: "usted@ejemplo.com",
+    subject: "Asunto (opcional)", subjectPlaceholder: "Asunto de su mensaje",
+    message: "Mensaje", messagePlaceholder: "Describa el servicio que desea, su tipo de cabello y su ciudad...",
+    honeypotAria: "Campo anti-spam, déjelo vacío",
+    submit: "Enviar mi solicitud", sending: "Enviando...",
+    errors: { name: "Introduzca al menos 2 caracteres.", email: "Dirección de correo inválida.", message: "Su mensaje debe contener al menos 10 caracteres." },
+    fallbackError: "No se pudo enviar el mensaje. Compruebe su conexión.", fallbackSuccess: "Mensaje enviado con éxito.",
   },
-  header: { cta: "Marcar", openMenu: "Abrir menu", closeMenu: "Fechar menu" },
-  footer: { socialsAria: "Redes sociais", rights: "Todos os direitos reservados." },
-  whatsapp: { aria: "Contactar a Mariama no WhatsApp", sr: "WhatsApp" },
-  language: { aria: "Mudar de idioma", label: "Idioma" },
+  header: { cta: "Reservar", openMenu: "Abrir menú", closeMenu: "Cerrar menú" },
+  footer: { socialsAria: "Redes sociales", rights: "Todos los derechos reservados." },
+  whatsapp: { aria: "Contactar a Mariama por WhatsApp", sr: "WhatsApp" },
+  language: { aria: "Cambiar de idioma", label: "Idioma" },
 };
 
 /* -------------------------------------------------------------------------- */
 /*  Accès                                                                       */
 /* -------------------------------------------------------------------------- */
 
-const SITES: Record<Locale, SiteData> = { fr: SITE_FR, en: SITE_EN, pt: SITE_PT };
-const UIS: Record<Locale, UIStrings> = { fr: UI_FR, en: UI_EN, pt: UI_PT };
+const SITES: Record<Locale, SiteData> = { en: SITE_EN, fr: SITE_FR, es: SITE_ES };
+const UIS: Record<Locale, UIStrings> = { en: UI_EN, fr: UI_FR, es: UI_ES };
 
 export function getSiteData(locale: Locale): SiteData {
-  return SITES[locale] ?? SITES.fr;
+  return SITES[locale] ?? SITES.en;
 }
 
 export function getUiStrings(locale: Locale): UIStrings {
-  return UIS[locale] ?? UIS.fr;
+  return UIS[locale] ?? UIS.en;
 }
